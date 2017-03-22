@@ -52,13 +52,13 @@ public class CtrlVisiteur implements WindowListener, ActionListener {
     public CtrlVisiteur(VueVisiteur vue, CtrlPrincipal ctrl) {
         this.vue = vue;
         this.ctrlPrincipal = ctrl;
-        // le contrôleur écoute la vue
+        // le controleur ecoute la vue
         this.vue.addWindowListener(this);
         this.vue.getjButtonChercherVisiteur().addActionListener(this);
         this.vue.getjButtonFermer().addActionListener(this);
         this.vue.getjButtonPrecedent().addActionListener(this);
         this.vue.getjButtonSuivant().addActionListener(this);
-        // préparer l'état iniitial de la vue
+        // preparer l'etat initial de la vue
         afficherLesVisiteur();
     }
 
@@ -81,7 +81,7 @@ public class CtrlVisiteur implements WindowListener, ActionListener {
                 getVue().getjComboBoxLabo().addItem(unLabo);
             }*/
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(getVue(), "CtrlVisiteur - échec de sélection des Visiteur");
+            JOptionPane.showMessageDialog(getVue(), "CtrlVisiteur - echec de selection des Visiteurs");
         }
     }
 
