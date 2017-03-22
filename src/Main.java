@@ -33,7 +33,7 @@ public class Main {
         //DaoConnexion connexion = new DaoConnexion();
 
         // On test la connexion
-        Jdbc.creer("oracle.jdbc.driver.OracleDriver", "jdbc:oracle:thin:", "localhost:1521:XE", "GSBBDD", "GSB", "gsb");
+        Jdbc.creer("oracle.jdbc.driver.OracleDriver", "jdbc:oracle:thin:", "@//localhost:1521/xe", "GSBBDD", "GSB", "gsb");
         //Jdbc.creer("com.mysql.jdbc.Driver", "jdbc:mysql:", "//localhost/", "AGENCEB", "agenceb_util", "secret");
         try {
             Jdbc.getInstance().connecter();

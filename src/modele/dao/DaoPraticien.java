@@ -38,8 +38,8 @@ public class DaoPraticien {
             String pra_cp = rs.getString("PRA_CP");
             String pra_ville = rs.getString("PRA_VILLE");
             float pra_coef = rs.getFloat("PRA_COEFNOTORIETE");
-            String codTypPraticien = rs.getString("TYP_CODE");
-            //unPraticien = new Praticien(pra_num,pra_nom, pra_prenom,pra_adresse,pra_cp,pra_ville,pra_coef,codTypPraticien);
+           // TypePraticien codTypPraticien = rs.getTyp_code("TYP_CODE");
+           // unPraticien = new Praticien(pra_num,pra_nom, pra_prenom,pra_adresse,pra_cp,pra_ville,pra_coef,codTypPraticien);
         }
         
         return unPraticien;

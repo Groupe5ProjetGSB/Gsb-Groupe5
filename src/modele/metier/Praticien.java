@@ -14,6 +14,7 @@ public class Praticien {
     private int pra_num;
     private String pra_nom;
     private String pra_prenom;
+    private String pra_adresse;
     private String pra_cp;
     private String pra_ville;
     private float pra_coefNotoriete;
@@ -75,10 +76,11 @@ public class Praticien {
         this.typ_code = typ_code;
     }
 
-    public Praticien(int pra_num, String pra_nom, String pra_prenom, String pra_cp, String pra_ville, float pra_coefNotoriete, TypePraticien typ_code) {
+    public Praticien(int pra_num, String pra_nom, String pra_prenom, String pra_adresse, String pra_cp, String pra_ville, float pra_coefNotoriete, TypePraticien typ_code) {
         this.pra_num = pra_num;
         this.pra_nom = pra_nom;
         this.pra_prenom = pra_prenom;
+        this.pra_adresse = pra_adresse;
         this.pra_cp = pra_cp;
         this.pra_ville = pra_ville;
         this.pra_coefNotoriete = pra_coefNotoriete;
