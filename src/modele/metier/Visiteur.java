@@ -23,14 +23,14 @@ public class Visiteur {
     private Secteur secteur;
     private Labo labo;
 
-    public Visiteur(String matriculeVisiteur, String nomVisiteur, String adresseVisiteur, String cpVisiteur, String villeVisiteur, Date dateEmbaucheVisiteur) {
-        this.matriculeVisiteur = matriculeVisiteur;
-        this.nomVisiteur = nomVisiteur;
-        this.adresseVisiteur = adresseVisiteur;
-        this.cpVisiteur = cpVisiteur;
-        this.villeVisiteur = villeVisiteur;
-        this.dateEmbaucheVisiteur = dateEmbaucheVisiteur;
-    }
+//    public Visiteur(String matriculeVisiteur, String nomVisiteur, String adresseVisiteur, String cpVisiteur, String villeVisiteur, Date dateEmbaucheVisiteur) {
+//        this.matriculeVisiteur = matriculeVisiteur;
+//        this.nomVisiteur = nomVisiteur;
+//        this.adresseVisiteur = adresseVisiteur;
+//        this.cpVisiteur = cpVisiteur;
+//        this.villeVisiteur = villeVisiteur;
+//        this.dateEmbaucheVisiteur = dateEmbaucheVisiteur;
+//    }
 
     public Visiteur(String matriculeVisiteur, String nomVisiteur, String prenomVisiteur, String adresseVisiteur, String cpVisiteur, String villeVisiteur, Date dateEmbaucheVisiteur, Secteur codeSecteur, Labo codeLabo) {
         this.matriculeVisiteur = matriculeVisiteur;
