@@ -9,7 +9,7 @@ package modele.metier;
  *
  * @author Dimitri
  */
-public class Practicien {
+public class Praticien {
 
     private int pra_num;
     private String pra_nom;
@@ -75,7 +75,7 @@ public class Practicien {
         this.typ_code = typ_code;
     }
 
-    public Practicien(int pra_num, String pra_nom, String pra_prenom, String pra_cp, String pra_ville, float pra_coefNotoriete, TypePraticien typ_code) {
+    public Praticien(int pra_num, String pra_nom, String pra_prenom, String pra_cp, String pra_ville, float pra_coefNotoriete, TypePraticien typ_code) {
         this.pra_num = pra_num;
         this.pra_nom = pra_nom;
         this.pra_prenom = pra_prenom;
