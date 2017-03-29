@@ -14,11 +14,11 @@ public class Jdbc {
     private static Jdbc singleton = null;
     // Paramètre de la connexion
     private String piloteJdbc = "";
-    private String protocoleJdbc = "gsb@";
-    private String serveurBd = "gsb@//localhost:1521/xe";
-    private String nomBd = "gsb";
-    private String loginSgbd = "gsb";
-    private String mdpSgbd = "gsb";
+    private String protocoleJdbc = "ora_2slamppe_eq5@";
+    private String serveurBd = "ora_2slamppe_eq5@//172.15.11.102:1521/orcl";
+    private String nomBd = "GSB_GROUP5";
+    private String loginSgbd = "ora_2slamppe_eq5";
+    private String mdpSgbd = "equipe05";
     // Connexion
     private Connection connexion = null; // java.sql.Connection
 

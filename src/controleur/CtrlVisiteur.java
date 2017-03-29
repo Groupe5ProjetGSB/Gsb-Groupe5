@@ -58,33 +58,23 @@ public class CtrlVisiteur implements WindowListener, ActionListener {
         this.vue.getjButtonFermer().addActionListener(this);
         this.vue.getjButtonPrecedent().addActionListener(this);
         this.vue.getjButtonSuivant().addActionListener(this);
-        // preparer l'etat initial de la vue
+        // preparer l'etat iniitial de la vue
         afficherLesVisiteur();
     }
 
     public final void afficherLesVisiteur() {
         List<Visiteur> lesVisiteur = null;
-        List<Labo> lesLabo = null;
-        List<Secteur> lesSecteur = null;
         try {
             lesVisiteur = DaoVisiteur.selectAll();
-            lesSecteur = DaoSecteur.selectAll();
-            lesLabo = DaoLabo.selectAll();
+
             SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
             for (Visiteur unVisiteur : lesVisiteur) {
                 getVue().getjComboBoxChercher().addItem(unVisiteur);
             }
-            /* for (Secteur unSecteur : lesSecteur) {
-                getVue().getjComboBoxSecteur().addItem(unSecteur);
-            }
-            for (Labo unLabo : lesLabo) {
-                getVue().getjComboBoxLabo().addItem(unLabo);
-            }*/
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(getVue(), "CtrlVisiteur - echec de selection des Visiteurs");
+            JOptionPane.showMessageDialog(getVue(), "CtrlVisiteur - echec de selection des Visiteur");
         }
     }
-
 
     public final void afficherVueVisiteur() throws SQLException {
 
@@ -96,45 +86,23 @@ public class CtrlVisiteur implements WindowListener, ActionListener {
         getVue().getjTextFieldCp().setText(unVisiteur.getCpVisiteur());
         getVue().getjTextFieldNomVille().setText(unVisiteur.getVilleVisiteur());
 
+        try {
+            if (unVisiteur.getSecteur().getSec_libelle() == null) {
+                getVue().getjTextFieldSecteur().setText("Aucun Secteur");
+            } else {
+                getVue().getjTextFieldSecteur().setText(unVisiteur.getSecteur().getSec_libelle());
+            }
 
-        {
-        if (unVisiteur.getSecteur().getSec_libelle() == null) {
-            getVue().getjTextFieldSecteur().setText("Aucun Secteur");
-        } else {
-            getVue().getjTextFieldSecteur().setText(unVisiteur.getSecteur().getSec_libelle());
+            if (unVisiteur.getLabo().getNomLabo() == null) {
+                getVue().getjTextFieldLabo().setText("Aucun Labo");
+            } else {
+                getVue().getjTextFieldLabo().setText(unVisiteur.getLabo().getNomLabo());
+            }
+        } catch (Exception e) {
         }
 
-        if (unVisiteur.getLabo().getNomLabo() == null) {
-            getVue().getjTextFieldLabo().setText("Aucun Labo");
-        } else {
-            getVue().getjTextFieldLabo().setText(unVisiteur.getLabo().getNomLabo());
-        }
-
-        }
     }
 
-
-
-
-    /*public final int indexLabo(Labo labo) throws SQLException {
-        int indexLabo = 0;
-        Labo nomLabo = DaoLabo.selectOne(labo.getCodeLabo());
-
-        String nom = nomLabo.getNomLabo();
-        switch (nom) {
-            case "Bichat":
-                indexLabo = 0;
-                break;
-            case "Gyverny":
-                indexLabo = 1;
-                break;
-            case "Swiss Kane":
-                indexLabo = 2;
-                break;
-        }
-
-        return indexLabo;
-    }*/
     private void quitter() {
         ctrlPrincipal.quitterApplication();
     }
@@ -213,6 +181,11 @@ public class CtrlVisiteur implements WindowListener, ActionListener {
                     Logger.getLogger(CtrlVisiteur.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
+
+        }
+        if (e.getSource().equals(vue.getjButtonFermer())) {
+            vue.setVisible(false);
+            ctrlPrincipal.afficherMenuPrincipal();
 
         }
     }

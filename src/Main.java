@@ -8,12 +8,14 @@ import controleur.CtrlMedicament;
 import controleur.CtrlMenuGeneral;
 import controleur.CtrlPracticien;
 import controleur.CtrlPrincipal;
+import controleur.CtrlRapportVisitie;
 import controleur.CtrlVisiteur;
 import java.io.IOException;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
 
 import modele.dao.Jdbc;
+import vue.VueCompteRendu;
 import vue.VueMedicament;
 import vue.VueMenuGeneral;
 import vue.VuePracticien;
@@ -33,7 +35,7 @@ public class Main {
         //DaoConnexion connexion = new DaoConnexion();
 
         // On test la connexion
-        Jdbc.creer("oracle.jdbc.driver.OracleDriver", "jdbc:oracle:thin:", "@//localhost:1521/xe", "", "GSB", "gsb");
+        Jdbc.creer("oracle.jdbc.driver.OracleDriver", "jdbc:oracle:thin:", "@172.15.11.102:1521", ":orcl", "ora_2slamppe_eq5", "equipe05");
         //Jdbc.creer("com.mysql.jdbc.Driver", "jdbc:mysql:", "//localhost/", "AGENCEB", "agenceb_util", "secret");
         try {
             Jdbc.getInstance().connecter();
@@ -62,8 +64,13 @@ public class Main {
         CtrlPracticien leControleurPracticien = new CtrlPracticien(laVuePracticien, leControleurPrincipal);
         leControleurPrincipal.setCtrlPracticien(leControleurPracticien);
 
+        VueCompteRendu laVueCompteRendu = new VueCompteRendu();
+        CtrlRapportVisitie leControleurRapportVisitie = new CtrlRapportVisitie(laVueCompteRendu, leControleurPrincipal);
+        leControleurPrincipal.setCtrlRapportVisitie(leControleurRapportVisitie);
+
         // afficher la vue
-        laVueLeMenuGeneral.setVisible(true);
+        laVueLeMenuGeneral
+                .setVisible(true);
 
     }
 
